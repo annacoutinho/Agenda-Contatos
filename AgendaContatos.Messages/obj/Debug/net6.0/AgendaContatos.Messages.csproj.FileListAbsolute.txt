@@ -1,0 +1,12 @@
+C:\Users\Home\Documents\Curso C#\AgendaContatos\AgendaContatos.Messages\bin\Debug\net6.0\AgendaContatos.Messages.deps.json
+C:\Users\Home\Documents\Curso C#\AgendaContatos\AgendaContatos.Messages\bin\Debug\net6.0\AgendaContatos.Messages.dll
+C:\Users\Home\Documents\Curso C#\AgendaContatos\AgendaContatos.Messages\bin\Debug\net6.0\AgendaContatos.Messages.pdb
+C:\Users\Home\Documents\Curso C#\AgendaContatos\AgendaContatos.Messages\obj\Debug\net6.0\AgendaContatos.Messages.csproj.AssemblyReference.cache
+C:\Users\Home\Documents\Curso C#\AgendaContatos\AgendaContatos.Messages\obj\Debug\net6.0\AgendaContatos.Messages.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Home\Documents\Curso C#\AgendaContatos\AgendaContatos.Messages\obj\Debug\net6.0\AgendaContatos.Messages.AssemblyInfoInputs.cache
+C:\Users\Home\Documents\Curso C#\AgendaContatos\AgendaContatos.Messages\obj\Debug\net6.0\AgendaContatos.Messages.AssemblyInfo.cs
+C:\Users\Home\Documents\Curso C#\AgendaContatos\AgendaContatos.Messages\obj\Debug\net6.0\AgendaContatos.Messages.csproj.CoreCompileInputs.cache
+C:\Users\Home\Documents\Curso C#\AgendaContatos\AgendaContatos.Messages\obj\Debug\net6.0\AgendaContatos.Messages.dll
+C:\Users\Home\Documents\Curso C#\AgendaContatos\AgendaContatos.Messages\obj\Debug\net6.0\refint\AgendaContatos.Messages.dll
+C:\Users\Home\Documents\Curso C#\AgendaContatos\AgendaContatos.Messages\obj\Debug\net6.0\AgendaContatos.Messages.pdb
+C:\Users\Home\Documents\Curso C#\AgendaContatos\AgendaContatos.Messages\obj\Debug\net6.0\ref\AgendaContatos.Messages.dll

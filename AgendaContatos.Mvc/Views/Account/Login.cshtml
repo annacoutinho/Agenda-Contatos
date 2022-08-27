@@ -1,0 +1,53 @@
+﻿@** Classe de modelo que será utilizada por esta página*@
+@model AgendaContatos.Mvc.Models.AccountLoginModel
+@{
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+ <div class= "card-body">
+    <div class="text-center">
+       <img src="https://iili.io/4nQwTN.png" class="img-fluid">        
+       <h5>Acesso ao Sistema</h5>
+        <p>Entre com suas credenciais para acessar a agenda</p>
+
+
+
+    </div>
+    @using(Html.BeginForm())
+
+    {
+        <div class="mb-3">
+            <label>Entre com seu email de acesso:</label>
+            @Html.TextBoxFor(model => model.Email, new { @class = "form-control"})
+            <div class="text-danger">
+                @Html.ValidationMessageFor(model => model.Email)
+                </div>
+
+        </div>
+        <div class="mb-3">
+            <label>Entre com sua senha de acesso:</label>
+            @Html.PasswordFor(model => model.Senha, new { @class = "form-control"})
+            <div class="text-danger">
+              @Html.ValidationMessageFor(model => model.Senha)
+           </div>
+        </div>
+
+
+            <div class="text-end">
+                <a href="/Account/PasswordRecover">Esqueci minha senha.</a>
+            </div>
+       
+        <div class="mb-3 d-grid">
+               <input type="submit" class="btn btn-success" value="Acessar Agenda" />
+             </div>
+        <div class="mb-3 d-grid">
+            <a href="/Account/Register" class="btn btn-primary">
+                Não possui conta? <strong> Cadastre-se aqui! </strong>
+                </a>
+        </div>
+        <div class="text-center">
+                 <strong>@TempData["Mensagem"]</strong>
+
+             </div>
+    }
+ </div>

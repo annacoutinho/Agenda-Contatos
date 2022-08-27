@@ -1,0 +1,117 @@
+﻿@using AgendaContatos.Mvc.Models
+@using Newtonsoft.Json
+
+
+
+@{
+    Layout = null;
+
+    var json = User.Identity.Name;
+
+    var authenticationModel = JsonConvert.DeserializeObject<AutheticationModel>(json);
+
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Agenda de Contatos</title>
+
+    <!--Folha de estilos CSS do datatables-->
+    <link rel="stylesheet" href="~/css/jquery.dataTables.min.css" />
+
+
+
+    <link rel="stylesheet" href="~/css/bootstrap.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+          rel="stylesheet" />
+
+
+</head>
+<body>
+    <!--bootstrap navbar-->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Agenda de Contatos</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Gerenciar Contatos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/Contatos/Cadastro">Cadastrar contatos</a></li>
+                            <li><a class="dropdown-item" href="/Contatos/Consulta">Consultar contatos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Minha Conta
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/Usuarios/Dados">Dados do usuário</a></li>
+                            <li><a class="dropdown-item" href="/Usuarios/AlterarSenha">Alterar senha de acesso</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+
+                    <div class="text-white">
+                        <div>
+                            <small>
+                                <strong>@authenticationModel.Nome</strong>
+                            </small>
+                        </div>
+                        <div style="margin-top: -10px!important">
+                            <small>@authenticationModel.Email</small>
+                        </div>
+                    </div>
+
+                       
+
+                    <a href="/Account/Logout" class="btn btn-outline-light btn-sm">
+                        Sair da Agenda
+                    </a>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    @if (TempData["Mensagem"] != null)
+    {
+        <div class="alert alert-secondary alert-dismissible fade show" role="alert">
+            <strong>@TempData["Mensagem"]</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <!--main area-->
+
+    <div class="container mt-3">
+        @RenderBody()
+    </div>
+
+    <script src="~/js/bootstrap.bundle.js"></script>
+
+    <!--arquivo JS do JQuery e DataTables-->
+    <script src="~/js/jquery-3.6.0.min.js"></script>
+    <script src="~/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(document).ready( function () {
+    $('#tabela').DataTable()
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.10.24/i18n/Portuguese-Brasil.json'
+            }
+            });
+    </script>
+</body>
+</html>

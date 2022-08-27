@@ -1,0 +1,73 @@
+﻿
+@**  declarando a classe de modelo de dados para esta página**@
+@model AgendaContatos.Mvc.Models.AccountRegisterModel
+
+@{
+    //definir a página de layout utilizada
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+   <div class="card-body">
+       <div class="text-center mb-3">
+
+
+       <h3>Cadastro de Conta de Usuário</h3>
+       <p>Entre com seus dados para criar uma conta na agenda</p>
+
+       </div>
+           @** Declarando o formulario*@
+           @using(Html.BeginForm())
+           {
+             <div class="mb-3">
+               <label>Entre com seu nome:</label>
+               @Html.TextBoxFor(model => model.Nome, new { @class="form-control" })
+               <div class="text-danger">
+                @Html.ValidationMessageFor(model => model.Nome)
+
+               </div>
+             </div>
+
+             <div class="mb-3">
+               <label>Entre com seu email:</label>
+               @Html.TextBoxFor(model => model.Email, new { @class="form-control" })
+               <div class="text-danger">
+                @Html.ValidationMessageFor(model => model.Email)
+              </div>
+             </div>
+
+             <div class="mb-3">
+               <label>Entre com sua senha:</label>
+                @Html.PasswordFor(model => model.Senha, new {@Class = "form-control"})
+               <div class="text-danger">
+                 @Html.ValidationMessageFor(model => model.Senha)
+                 </div>
+             </div>
+
+             <div class="mb-3">
+               <label>Confirme a sua senha:</label>
+               @Html.PasswordFor(model => model.SenhaConfirmacao, new {@class = "form-control"})
+               <div class="text-danger">
+                @Html.ValidationMessageFor(model => model.SenhaConfirmacao)
+                </div>
+             </div>
+
+
+              <div class="mb-3 d-grid">
+               <input type="submit" class="btn btn-success" value="Realizar Cadastro" />
+             </div>
+
+             <div class="mb-3 d-grid">
+               <a href="/Account/Login" class="btn btn-primary">
+                   Já possui conta? <strong>Acesse aqui!</strong>
+                </a>
+             </div>
+          }
+             <div class="text-center">
+                 <strong>@TempData["Mensagem"]</strong>
+
+             </div>
+
+
+       </form>
+
+   </div>

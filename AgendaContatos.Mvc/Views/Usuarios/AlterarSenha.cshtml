@@ -1,0 +1,38 @@
+﻿
+@model AgendaContatos.Mvc.Models.UsuariosAlterarSenhaModel
+@{
+    ViewData["Title"] = "AlterarSenha";
+    Layout = "~/Views/Shared/_ContatosLayout.cshtml";
+}
+
+<h5>Alterar senha de acesso</h5>
+<p>Preencha os campos para modificar sua senha de acesso do sistema</p>
+<hr/>
+
+@using(Html.BeginForm())
+{
+    <div class="row mt-3">
+        <div class= "col-md-4">
+            <label>Nova senha de acesso:</label>
+            @Html.PasswordFor(model => model.NovaSenha, new{@class = "form-control"})
+            <div class="text-danger">
+                @Html.ValidationMessageFor(model => model.NovaSenha)
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <label>Confirme a nova senha:</label>
+            @Html.PasswordFor(model => model.NovaSenhaConfirmacao, new{@class = "form-control"})
+            <div class="text-danger">
+                @Html.ValidationMessageFor(model => model.NovaSenhaConfirmacao)
+            </div>
+        </div>
+        <div class="row mt-3">
+        <div class="col-md-12">
+        <input type="submit" class="btn btn-success" value="Atualizar Senha"/>
+        </div>
+        </div>
+    </div>
+}
+
+

@@ -1,0 +1,55 @@
+﻿
+@* Definir a classe de modelo que será utilizada nesta página*@
+@model AgendaContatos.Mvc.Models.ContatosCadastroModel
+@{
+    Layout = "~/Views/Shared/_ContatosLayout.cshtml";
+}
+<h5>Cadastro de contatos</h5>
+<p>Preencha os campos para incluir um contato em sua agenda</p>
+<hr />
+
+@*  declarando o formulário *@
+@using(Html.BeginForm())
+{
+  <div class="row mb-3">
+      <div class="col-md-8">
+          <label>Nome do contato: </label>
+          @Html.TextBoxFor(model => model.Nome, new { @class ="form-control"})
+          <div class="text-bg-danger">
+              @Html.ValidationMessageFor(model => model.Nome)
+          </div>
+
+      </div>
+      <div class="col-md-4">
+          <label>Data de Nascimento: </label>
+          @Html.TextBoxFor(model => model.DataNascimento, new { @class ="form-control", @type = "date"})
+          <div class="text-bg-danger">
+              @Html.ValidationMessageFor(model => model.DataNascimento)
+          </div>
+
+      </div>
+  </div>
+  
+      <div class= "col-md-4">
+          <label> Telefone do contato:</label>
+          @Html.TextBoxFor(model => model.Telefone, new { @class = "form-control"})
+          <div class=" text-danger">
+              @Html.ValidationMessageFor(model => model.Telefone)
+          </div>
+      </div>
+         <div class= "col-md-4">
+          <label> Email do contato:</label>
+          @Html.TextBoxFor(model => model.Email, new { @class = "form-control"})
+          <div class=" text-danger">
+              @Html.ValidationMessageFor(model => model.Email)
+          </div>
+      </div>
+      <div class="row mb-3">
+          <div class="col-md-12">
+              <input type="submit" class="btn btn-success" value= "Realizar cadastro"/>
+
+          </div>
+      </div>
+}
+
+

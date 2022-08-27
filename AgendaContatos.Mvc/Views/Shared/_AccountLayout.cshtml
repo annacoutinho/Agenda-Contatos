@@ -1,0 +1,41 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Agenda de Contatos</title>
+    <link rel=" stylesheet" href="~/css/bootstrap.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body class="bg-secondary">
+    <style> *{
+        font-family: "Poppins", sans-serif;
+     }</style>
+
+    <div class="row mt-5">
+        <div class="col-md-4 offset-4">
+            <div class="card">
+                @RenderBody()
+            </div>
+            <div class="mt-3 text-white text-center">
+                Projeto Agenda de Contato V1.0
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script scr = "~/js/bootstrap.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+﻿@*Modelo de dados da página*@
+@model List<AgendaContatos.Mvc.Models.ContatosConsultaModel>
+@{
+    Layout = "~/Views/Shared/_ContatosLayout.cshtml";
+}
+<h5> Consulta de contatos</h5>
+<p>Listagem de contatos cadastrados contato em sua agenda</p>
+<hr />
+
+<table  id="tabela" clas="table table-sm table-hover">
+    <thead>
+   <tr>
+       <th>Nome do contato</th>
+       <th>Telefone</th>
+       <th>Email</th>
+       <th>Data de Nascimento</th>
+       <th>Idade</th>
+       <th>Operações</th>
+   </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+            <td>@item.Nome</td>
+            <td>@item.Telefone</td>
+            <td>@item.Email</td>
+            <td>@item.DataNascimento</td>
+            <td>@item.Idade</td>
+            <td>
+                <a href="/Contatos/Edicao/@item.IdContato" class= "btn btn-sm btn-primary">
+                    Editar
+                </a>
+                <a href="/Contatos/Exclusao/@item.IdContato" 
+                onclick="    return confirm('Deseja excluir o contato @item.Nome?');"
+                class="btn btn-sm btn-danger">
+                    Excluir
+                </a>
+            </td>
+        </tr>
+            
+        }
+        
+
+    </tbody>
+    
+</table>
+
